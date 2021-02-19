@@ -55,12 +55,10 @@ def find_nearest_x(x_tbl, y_tbl, dy_tbl, n, x):
     while (curr_ind - left < 0):
         left -= 1
         right += 1
-        print(1)
 
     while(curr_ind + right > len(x_tbl) - 1):
         right -= 1
         left += 1
-        print(2)
 
     x_table = x_tbl[int(curr_ind - left):int(curr_ind + right) + 1]
     y_table = y_tbl[int(curr_ind - left):int(curr_ind + right) + 1]
