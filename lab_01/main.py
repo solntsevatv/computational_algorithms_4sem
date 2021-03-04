@@ -140,13 +140,22 @@ def main():
 
     x_tbl, y_tbl, dy_tbl = insertion_sort_tbl(x_tbl, y_tbl, dy_tbl)
 
-    print(f"For n = {int(n)}, x = {x}:")
+    for i in range (0,5):
+        n = i
+        print(f"For n = {int(n)}, x = {x}:")
 
-    result = interpolate_newton(x_tbl, y_tbl, dy_tbl, int(n), x)
-    print("Newton: {:.6f}".format(result))
+        result = interpolate_newton(x_tbl, y_tbl, dy_tbl, int(n), x)
+        print("Newton: {:.6f}".format(result))
 
-    result = interpolate_hermit(x_tbl, y_tbl, dy_tbl, int(n), x)
-    print("Hermit: {:.6f}".format(result))
+        result = interpolate_hermit(x_tbl, y_tbl, dy_tbl, int(n), x)
+        print("Hermit: {:.6f}".format(result))
+        print()
+
+    x_tbl, y_tbl = y_tbl, x_tbl
+    for i in range(0, 7):
+        n = i
+        result = interpolate_newton(x_tbl, y_tbl, dy_tbl, int(n), 0)
+        print("reverse Newton for n = {}: {:.6f}".format(n, result))
 
 if __name__ == "__main__":
     main()
