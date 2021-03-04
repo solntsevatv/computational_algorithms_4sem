@@ -89,6 +89,9 @@ def interpolate(table_x, table_y, n, x):
     return count_polynomial(n, x, table_x, dif_tbl)
 
 def interpolate_multi(x_tbl, y_tbl, z_tbl, n_x, n_y, x, y):
+    """
+        Многомерная интерполяция
+    """
     x_table = find_nearest(x_tbl, n_x + 1, x)
     y_table = find_nearest(y_tbl, n_y + 1, y)
 
@@ -117,7 +120,11 @@ def main():
         return
 
     y_res = interpolate_multi(x_tbl, y_tbl, z_tbl, n_x, n_y, x, y)
-    print(y_res)
+    print("n_x =", int(n_x))
+    print("n_y =", int(n_y))
+    print("x =", x)
+    print("y =", y)
+    print("y_res =", y_res)
 
 if __name__ == "__main__":
     main()
